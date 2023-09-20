@@ -58,6 +58,59 @@ body {
     "sidebar" 100px
     "footer"  100px;
 }
+/* Diseño de tres columnas con una barra lateral amplia: */
+/* Three-column layout with a large sidebar: */
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template:
+      "header  header header" 100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer" 100px /
+      200px auto 300px;
+  }
+}
+
+/* Diseño de dos columnas con un área de contenido principal amplia: */
+/* Two-column layout with a wide main content area */
+
+@media (min-width: 800px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "main    sidebar" auto
+      "footer  footer" 100px /
+      auto 300px;
+  }
+}
+/* Diseño de cuatro columnas con columnas distribuidas de manera uniforme: */
+/* Four-column layout with evenly distributed columns: css */
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template:
+      "header  header header  header" 100px
+      "navbar  main   sidebar footer" auto /
+      1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Two-row layout with a tall header and footer: */
+/* Diseño de dos filas con un encabezado y pie de página altos: */
+
+@media (min-width: 800px) {
+  .grid-container {
+    grid-template:
+      "header" 200px
+      "main" auto
+      "sidebar" 150px
+      "footer" 200px /
+      1fr;
+  }
+}
+
+
+/* ////////////////// */
 
 @media (min-width: 600px) {
   .grid-container {
