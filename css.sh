@@ -3,26 +3,29 @@
 # Ruta al archivo CSS
 archivo="grid.css"
 
-# Función para comentar líneas
-comentar_lineas() {
-  local inicio=$1
-  local fin=$((inicio + 9))  # Comentar las 10 líneas siguientes
-
-  # Comentar las líneas desde $inicio hasta $fin
-  sed -i "${inicio},${fin}s/^\([^/]\)/\/\/ \1/" "$archivo"
+# Función para comentar una línea específica
+comentar_linea() {
+  local linea=$1
+  sed -i "${linea}s/^/\/\*/" "$archivo"
+  sed -i "${linea}s/$/\*\//" "$archivo"
 }
 
 # Limpiar la pantalla
 clear
 
-# Mostrar las líneas del 104 al 113 con sus números correspondientes
-sed -n '104,113p' "$archivo" | cat -n
+# Mostrar las líneas del archivo con números de línea
+cat -n "$archivo"
 
 # Preguntar al usuario desde qué línea desea comentar
-read -p "Desde qué línea deseas comentar: " inicio_comentar
+read -p "Desde qué línea deseas comenzar a comentar: " inicio_comentar
+read -p "Hasta qué línea deseas terminar de comentar: " fin_comentar
 
-# Comentar el bloque de código desde la línea especificada
-comentar_lineas "$inicio_comentar"
+# Comentar las líneas especificadas por el usuario
+while [ "$inicio_comentar" -le "$fin_comentar" ]
+do
+  comentar_linea "$inicio_comentar"
+  inicio_comentar=$((inicio_comentar + 1))
+done
 
-# Mostrar las líneas actualizadas del 104 al 113 con sus números correspondientes
-sed -n '104,113p' "$archivo" | cat -n
+# Mostrar las líneas actualizadas del archivo
+cat -n "$archivo"
