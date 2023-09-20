@@ -110,7 +110,8 @@ body {
     "main" auto
     "sidebar" 80px
     "footer" 80px;
-}*/
+}
+*/
 
 
 /* ////////////////////////////////11 */
@@ -164,8 +165,11 @@ body {
 /* /////////////////////////////////////// */
 
 
-/* Diseño de tres columnas con una barra lateral amplia: */
-/* Three-column layout with a large sidebar: */
+/* /////////////////////////////////////// */
+/* 1200px */
+/* /////////////////////////////////////// */
+
+/* Resolución mínima de 1200px - Ejemplo 1 */
 
 @media (min-width: 1200px) {
   .grid-container {
@@ -177,8 +181,35 @@ body {
   }
 }
 
-/* Diseño de dos columnas con un área de contenido principal amplia: */
-/* Two-column layout with a wide main content area */
+/* Resolución mínima de 1200px - Ejemplo 2 */
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template:
+      "header  header header" 100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer" 100px /
+      200px auto 400px;
+  }
+}
+
+/* Resolución mínima de 1200px - Ejemplo 3 */
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template:
+      "header  header header" 100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer" 100px /
+      200px auto 200px;
+  }
+}
+
+/* /////////////////////////////////// */
+/* 800px */
+/* /////////////////////////////////// */
+
+/* Resolución mínima de 800px - Ejemplo 1 */
 
 @media (min-width: 800px) {
   .grid-container {
@@ -189,53 +220,82 @@ body {
       auto 300px;
   }
 }
-/* Diseño de cuatro columnas con columnas distribuidas de manera uniforme: */
-/* Four-column layout with evenly distributed columns: css */
 
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template:
-      "header  header header  header" 100px
-      "navbar  main   sidebar footer" auto /
-      1fr 1fr 1fr 1fr;
-  }
-}
-
-/* Two-row layout with a tall header and footer: */
-/* Diseño de dos filas con un encabezado y pie de página altos: */
+/* Resolución mínima de 800px - Ejemplo 2 */
 
 @media (min-width: 800px) {
   .grid-container {
     grid-template:
-      "header" 200px
-      "main" auto
-      "sidebar" 150px
-      "footer" 200px /
-      1fr;
+      "header  header" 100px
+      "main    sidebar" auto
+      "footer  footer" 100px /
+      auto 400px;
+  }
+}
+
+/* Resolución mínima de 800px - Ejemplo 3 */
+
+@media (min-width: 800px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "main    sidebar" auto
+      "footer  footer" 100px /
+      auto 300px;
   }
 }
 
 
-/* ////////////////// */
+/* /////////////////////////////////// */
+/* 600px */
+/* /////////////////////////////////// */
+
+
+/* Ejemplo 1: Layout con un sidebar más ancho y contenido principal ajustable: */
+/* Resolución mínima de 600px - Ejemplo 1 */
 
 @media (min-width: 600px) {
   .grid-container {
-    /* grid-template-columns: 200px auto;
-    grid-template-rows: 100px 50px auto 100px;
-    grid-template-areas: 
-    "header  header"
-    "navbar  navbar"
-    "sidebar main"
-    "footer  footer"; */
-
     grid-template:
       "header  header" 100px
-      "navbar  navbar" 50px
-      "sidebar main"   auto
-      "footer  footer" 100px /
-      200px    auto;
+      "navbar  main" auto
+      "sidebar footer" 100px /
+      250px auto;
   }
 }
+
+/* Ejemplo 2: Layout con un sidebar aún más estrecho y contenido principal amplio: */
+
+/* Resolución mínima de 600px - Ejemplo 2 */
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "navbar  main" auto
+      "sidebar footer" 100px /
+      150px auto;
+  }
+}
+
+/* Ejemplo 3: Layout con un sidebar estrecho y contenido principal ajustable: */
+
+/* Resolución mínima de 600px - Ejemplo 3 */
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "navbar  main" auto
+      "sidebar footer" 100px /
+      100px auto;
+  }
+}
+
+
+
+/* //////////////////////////////////// */
+/* 900px */
+/* //////////////////////////////////// */
 
 @media (min-width: 900px) {
   .grid-container {
@@ -244,5 +304,31 @@ body {
       "navbar  main   sidebar" auto
       "footer  footer footer"  100px /
       200px    auto   200px;
+  }
+}
+
+/* Ejemplo 1: Layout con un sidebar más ancho y contenido principal ajustable */
+
+/* Resolución mínima de 900px */
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header    header  header" 100px
+      "main      navbar  sidebar" auto
+      "footer    footer  footer" 100px /
+      200px auto 200px;
+  }
+}
+
+/* Ejemplo 2: Layout con un sidebar estrecho y contenido principal aún más amplio */
+
+/* Resolución mínima de 900px - Ejemplo 3 */
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "navbar  header header" 100px
+      "sidebar main   main" auto
+      "sidebar footer footer" 100px /
+      200px auto 200px;
   }
 }
