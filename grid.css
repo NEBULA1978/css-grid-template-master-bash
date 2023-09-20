@@ -48,7 +48,11 @@ body {
   background-color: #8c96a0;
 }
 
-.grid-container {
+/* /////////////////////////////////// */
+/* .grid-container */
+/* /////////////////////////////////// */
+
+/* .grid-container {
   display: grid;
   gap: 10px;
   grid-template:
@@ -57,7 +61,108 @@ body {
     "main"    auto
     "sidebar" 100px
     "footer"  100px;
+} */
+
+/* Segundo .grid-container */
+/* .grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header" 150px
+    "navbar" 60px
+    "main" auto
+    "sidebar" 120px
+    "footer" 150px;
+} */
+
+/* Tercer .grid-container */
+/* .grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template:
+    "header" 80px
+    "navbar" 40px
+    "main" auto
+    "sidebar" 80px
+    "footer" 80px;
+} */
+
+
+/* Cuarto .grid-container */
+/* .grid-container {
+  display: grid;
+  gap: 15px;
+  grid-template:
+    "header" 120px
+    "navbar" 60px
+    "main" auto
+    "sidebar" 120px
+    "footer" 120px;
+} */
+
+/* Quinto .grid-container */
+/* .grid-container {
+  display: grid;
+  gap: 8px;
+  grid-template:
+    "header" 80px
+    "navbar" 40px
+    "main" auto
+    "sidebar" 80px
+    "footer" 80px;
+} */
+
+/* ////////////////////////////////11 */
+/* Usando grid-template-rows */
+/* //////////////////////////////// */
+
+/* Ejemplo 1: Usando grid-template-rows
+.grid-container1 {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 100px 50px auto 100px 100px;
 }
+
+/* Ejemplo 2: Usando grid-template-areas */
+/* .grid-container2 {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "sidebar"
+    "footer";
+}
+
+/* Ejemplo 3: Combinando grid-template-rows y grid-template-areas */
+/* .grid-container3 {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 100px 50px auto 100px 100px;
+  grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "sidebar"
+    "footer";
+} */
+
+/* Ejemplo 4: Usando grid-template-columns */
+/* .grid-container4 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 50px auto 100px 100px;
+} */ 
+
+
+
+/* /////////////////////////////////////// */
+/* mediaquerys */
+/* /////////////////////////////////////// */
+
+
 /* Diseño de tres columnas con una barra lateral amplia: */
 /* Three-column layout with a large sidebar: */
 

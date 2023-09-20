@@ -1,47 +1,28 @@
 #!/bin/bash
 
-# CSS file path
-css_file="grid.css"
+# Ruta al archivo CSS
+archivo="grid.css"
 
-# Función para descomentar una sección específica
-descomentar_seccion() {
-  local section_name="$1"
-  sed -i "/\/\* $section_name \*\//,/\/\* \/$section_name \*\// s/\/\* //; s/ \*\///" "$css_file"
+# Función para comentar líneas
+comentar_lineas() {
+  local inicio=$1
+  local fin=$((inicio + 9))  # Comentar las 10 líneas siguientes
+
+  # Comentar las líneas desde $inicio hasta $fin
+  sed -i "${inicio},${fin}s/^\([^/]\)/\/\/ \1/" "$archivo"
 }
 
-# Función para comentar todas las secciones
-comentar_todas_las_secciones() {
-  sed -i "s/\/* \([^ ]*\) *\*\//\/\* \1 \*\//g" "$css_file"
-}
+# Limpiar la pantalla
+clear
 
-# Menú de selección
-echo "Seleccione el tamaño de la caja:"
-echo "1. Tres columnas con barra lateral amplia"
-echo "2. Dos columnas con área de contenido principal amplia"
-echo "3. Cuatro columnas con columnas distribuidas uniformemente"
-echo "4. Dos filas con encabezado y pie de página altos"
-echo "5. Comentar todas las secciones"
-read -p "Ingrese el número de la opción deseada: " opcion
+# Mostrar las líneas del 104 al 113 con sus números correspondientes
+sed -n '104,113p' "$archivo" | cat -n
 
-case $opcion in
-  1)
-    descomentar_seccion "Diseño de tres columnas con una barra lateral amplia:"
-    ;;
-  2)
-    descomentar_seccion "Diseño de dos columnas con un área de contenido principal amplia:"
-    ;;
-  3)
-    descomentar_seccion "Diseño de cuatro columnas con columnas distribuidas de manera uniforme:"
-    ;;
-  4)
-    descomentar_seccion "Diseño de dos filas con un encabezado y pie de página altos:"
-    ;;
-  5)
-    comentar_todas_las_secciones
-    ;;
-  *)
-    echo "Opción no válida."
-    ;;
-esac
+# Preguntar al usuario desde qué línea desea comentar
+read -p "Desde qué línea deseas comentar: " inicio_comentar
 
-echo "Operación completada."
+# Comentar el bloque de código desde la línea especificada
+comentar_lineas "$inicio_comentar"
+
+# Mostrar las líneas actualizadas del 104 al 113 con sus números correspondientes
+sed -n '104,113p' "$archivo" | cat -n
