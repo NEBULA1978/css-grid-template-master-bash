@@ -1,5 +1,7 @@
+/* Importa la fuente de Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
 
+/* Estilos generales */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +18,7 @@ body {
   min-height: 100%;
 }
 
+/* Estilo común para elementos del grid */
 .grid-container>* {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
@@ -23,28 +26,30 @@ body {
   text-align: center;
 }
 
+/* Header */
 .header {
   grid-area: header;
   background-color: #85aedd;
 }
 
-/* CSS para el navbar */
+/* Navbar */
 .navbar {
   background-color: #333;
   color: #fff;
+  /* Alineación horizontal en pantalla grande */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .navbar ul {
   list-style-type: none;
   padding: 0;
   display: flex;
-  /* Establece una alineación vertical cuando el ancho de la pantalla sea pequeño */
-  flex-direction: column;
-  /* Esto cambia la dirección de los elementos a vertical */
 }
 
 .navbar li {
-  margin-right: 20px;
+  margin: 0 10px;
 }
 
 .navbar a {
@@ -52,309 +57,76 @@ body {
   color: #fff;
 }
 
+/* Sidebar */
 .sidebar {
   grid-area: sidebar;
   background-color: #fdcfcf;
 }
 
+/* Main */
 .main {
   grid-area: main;
   background-color: #f5f5f5;
 }
 
+/* Footer */
 .footer {
   grid-area: footer;
   background-color: #8c96a0;
 }
 
-/* /////////////////////////////////// */
-/* .grid-container */
-/* /////////////////////////////////// */
+/* Media Queries */
 
-/* .grid-container {
-  display: grid;
-  gap: 10px;
-  grid-template:
-    "header"  100px
-    "navbar"  50px
-    "main"    auto
-    "sidebar" 100px
-    "footer"  100px;
-} */
-
-/* Segundo .grid-container */
-/* .grid-container {
-  display: grid;
-  gap: 10px;
-  grid-template:
-    "header" 150px
-    "navbar" 60px
-    "main" auto
-    "sidebar" 120px
-    "footer" 150px;
-} */
-
-/* Tercer .grid-container */
-/* .grid-container {
-  display: grid;
-  gap: 20px;
-  grid-template:
-    "header" 80px
-    "navbar" 40px
-    "main" auto
-    "sidebar" 80px
-    "footer" 80px;
-}  */
-
-
-/* Cuarto .grid-container */
-/* .grid-container {
-  display: grid;
-  gap: 15px;
-  grid-template:
-    "header" 120px
-    "navbar" 60px
-    "main" auto
-    "sidebar" 120px
-    "footer" 120px;
-} */
-
-/* Quinto .grid-container */
-.grid-container {
-  display: grid;
-  gap: 8px;
-  grid-template:
-    "header" 80px
-    "navbar" 40px
-    "main" auto
-    "sidebar" 80px
-    "footer" 80px;
-}
-
-
-
-/* ////////////////////////////////11 */
-/* Usando grid-template-rows */
-/* //////////////////////////////// */
-
-/* Ejemplo 1: Usando grid-template-rows
-.grid-container1 {
-  display: grid;
-  gap: 10px;
-  grid-template-rows: 100px 50px auto 100px 100px;
-}
-
-/* Ejemplo 2: Usando grid-template-areas */
-/* .grid-container2 {
-  display: grid;
-  gap: 10px;
-  grid-template-areas:
-    "header"
-    "navbar"
-    "main"
-    "sidebar"
-    "footer";
-}
-
-/* Ejemplo 3: Combinando grid-template-rows y grid-template-areas */
-/* .grid-container3 {
-  display: grid;
-  gap: 10px;
-  grid-template-rows: 100px 50px auto 100px 100px;
-  grid-template-areas:
-    "header"
-    "navbar"
-    "main"
-    "sidebar"
-    "footer";
-} */
-
-/* Ejemplo 4: Usando grid-template-columns */
-/* .grid-container4 {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 50px auto 100px 100px;
-} */
-
-
-
-/* /////////////////////////////////////// */
-/* mediaquerys */
-/* /////////////////////////////////////// */
-
-
-/* /////////////////////////////////////// */
-/* 1200px */
-/* /////////////////////////////////////// */
-
-/* Resolución mínima de 1200px - Ejemplo 1 */
-
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template:
-      "header  header header" 100px
-      "navbar  main   sidebar" auto
-      "footer  footer footer" 100px /
-      200px auto 300px;
-  }
-}
-
-/* Resolución mínima de 1200px - Ejemplo 2 */
-
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template:
-      "header  header header" 100px
-      "navbar  main   sidebar" auto
-      "footer  footer footer" 100px /
-      200px auto 400px;
-  }
-}
-
-/* Resolución mínima de 1200px - Ejemplo 3 */
-
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template:
-      "header  header header" 100px
-      "navbar  main   sidebar" auto
-      "footer  footer footer" 100px /
-      200px auto 200px;
-  }
-}
-
-/* /////////////////////////////////// */
-/* 800px */
-/* /////////////////////////////////// */
-
-/* Resolución mínima de 800px - Ejemplo 1 */
-
-@media (min-width: 800px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "main    sidebar" auto
-      "footer  footer" 100px /
-      auto 300px;
-  }
-}
-
-/* Resolución mínima de 800px - Ejemplo 2 */
-
-@media (min-width: 800px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "main    sidebar" auto
-      "footer  footer" 100px /
-      auto 400px;
-  }
-}
-
-/* Resolución mínima de 800px - Ejemplo 3 */
-
-@media (min-width: 800px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "main    sidebar" auto
-      "footer  footer" 100px /
-      auto 300px;
-  }
-}
-
-
-/* /////////////////////////////////// */
-/* 600px */
-/* /////////////////////////////////// */
-
-
-/* Ejemplo 1: Layout con un sidebar más ancho y contenido principal ajustable: */
-/* Resolución mínima de 600px - Ejemplo 1 */
-
-@media (min-width: 600px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "navbar  main" auto
-      "sidebar footer" 100px /
-      250px auto;
-  }
-}
-
-/* Ejemplo 2: Layout con un sidebar aún más estrecho y contenido principal amplio: */
-
-/* Resolución mínima de 600px - Ejemplo 2 */
-@media (min-width: 600px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "navbar  main" auto
-      "sidebar footer" 100px /
-      150px auto;
-  }
-}
-
-/* Ejemplo 3: Layout con un sidebar estrecho y contenido principal ajustable: */
-
-/* Resolución mínima de 600px - Ejemplo 3 */
-
-@media (min-width: 600px) {
-  .grid-container {
-    grid-template:
-      "header  header" 100px
-      "navbar  main" auto
-      "sidebar footer" 100px /
-      100px auto;
-  }
-}
-
-/* Resolución mínima de 600px - Ejemplo 3 */
-
-/* Cambia a disposición vertical cuando el ancho de la pantalla sea menor o igual a 600px */
-@media (max-width: 600px) {
-  .navbar ul {
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .navbar {
     flex-direction: column;
+    /* Cambia la dirección a vertical */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+  }
+
+  .navbar li {
+    margin: 10px 0;
+    /* Añade un espacio entre los elementos */
+    text-align: center;
+    /* Centra el texto verticalmente */
   }
 }
 
-/* //////////////////////////////////// */
-/* 900px */
-/* //////////////////////////////////// */
-
-@media (min-width: 900px) {
+/* Media Query para pantallas grandes (1200px o más) */
+@media (min-width: 1200px) {
   .grid-container {
     grid-template:
-      "header  header header" 100px
-      "navbar  main   sidebar" auto
-      "footer  footer footer" 100px /
-      200px auto 200px;
+      "header header header"
+      "navbar main sidebar"
+      "footer footer footer" / 200px auto 300px;
   }
 }
 
-/* Ejemplo 1: Layout con un sidebar más ancho y contenido principal ajustable */
-
-/* Resolución mínima de 900px */
-@media (min-width: 900px) {
+/* Media Query para pantallas medianas (800px o más) */
+@media (min-width: 800px) {
   .grid-container {
     grid-template:
-      "header    header  header" 100px
-      "main      navbar  sidebar" auto
-      "footer    footer  footer" 100px /
-      200px auto 200px;
+      "header header"
+      "main sidebar"
+      "footer footer" / auto 300px;
   }
 }
 
-/* Ejemplo 2: Layout con un sidebar estrecho y contenido principal aún más amplio */
-
-/* Resolución mínima de 900px - Ejemplo 3 */
-@media (min-width: 900px) {
+/* Media Query para pantallas pequeñas (600px o más) */
+@media (min-width: 600px) {
   .grid-container {
     grid-template:
-      "navbar  header header" 100px
-      "sidebar main   main" auto
-      "sidebar footer footer" 100px /
-      200px auto 200px;
+      "header header"
+      "navbar main"
+      "sidebar footer" / auto 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar a {
+    font-size: 0.8rem;
+    /* Adjust the font size as needed */
   }
 }
