@@ -16,7 +16,7 @@ body {
   min-height: 100%;
 }
 
-.grid-container > * {
+.grid-container>* {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   padding: 10px;
@@ -28,9 +28,28 @@ body {
   background-color: #85aedd;
 }
 
+/* CSS para el navbar */
 .navbar {
-  grid-area: navbar;
-  background-color: #afd6af;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  /* Establece una alineación vertical cuando el ancho de la pantalla sea pequeño */
+  flex-direction: column;
+  /* Esto cambia la dirección de los elementos a vertical */
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .sidebar {
@@ -76,7 +95,7 @@ body {
 } */
 
 /* Tercer .grid-container */
- /* .grid-container {
+/* .grid-container {
   display: grid;
   gap: 20px;
   grid-template:
@@ -156,7 +175,7 @@ body {
   gap: 10px;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 50px auto 100px 100px;
-} */ 
+} */
 
 
 
@@ -291,7 +310,14 @@ body {
   }
 }
 
+/* Resolución mínima de 600px - Ejemplo 3 */
 
+/* Cambia a disposición vertical cuando el ancho de la pantalla sea menor o igual a 600px */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+}
 
 /* //////////////////////////////////// */
 /* 900px */
@@ -300,10 +326,10 @@ body {
 @media (min-width: 900px) {
   .grid-container {
     grid-template:
-      "header  header header"  100px
+      "header  header header" 100px
       "navbar  main   sidebar" auto
-      "footer  footer footer"  100px /
-      200px    auto   200px;
+      "footer  footer footer" 100px /
+      200px auto 200px;
   }
 }
 
