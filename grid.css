@@ -16,6 +16,8 @@ body {
   font-family: "Public Sans", sans-serif;
   font-size: 1.2rem;
   min-height: 100%;
+  background-color: #f0f0f0;
+  /* Add a background color for better visual separation */
 }
 
 /* Container for the entire content */
@@ -27,15 +29,21 @@ body {
 
 /* Estilo común para elementos del grid */
 .grid-container>* {
-  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Soften the shadow */
   border-radius: 4px;
-  padding: 10px;
+  padding: 20px;
+  /* Increase padding for better spacing */
   text-align: center;
 }
 
 /* Header */
 .header {
   background-color: #85aedd;
+  color: #fff;
+  font-size: 1.5rem;
+  /* Increase font size */
+  height: 100%;
 }
 
 /* Navbar */
@@ -43,17 +51,17 @@ body {
   background-color: #333;
   color: #fff;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
+  /* Increase gap between items */
 }
 
 .navbar ul {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
+  /* Increase gap between items */
 }
 
 .navbar li {
@@ -64,7 +72,8 @@ body {
   text-decoration: none;
   color: #fff;
   background-color: #007bff;
-  padding: 8px 16px;
+  padding: 10px 20px;
+  /* Increase padding for better button appearance */
   border-radius: 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -72,6 +81,7 @@ body {
 /* Sidebar */
 .sidebar {
   background-color: #fdcfcf;
+  height: 100%;
 }
 
 /* Main */
@@ -82,19 +92,47 @@ body {
 /* Footer */
 .footer {
   background-color: #8c96a0;
+  color: #fff;
+  padding: 10px 0;
+  /* Adjust padding */
+  grid-row-start: 2;
+  /* Empieza en la segunda fila */
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
+
+  /* Para pantallas grandes */
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "navbar navbar navbar"
+      "main main main"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
   }
 
-  /* Adjust the grid layout as needed for larger screens */
-}
+  /* Corrige el posicionamiento del main y del footer */
+  .main {
+    order: 1;
+  }
 
-@media (max-width: 600px) {
-  .navbar {
-    justify-content: flex-start;
+  .footer {
+    order: 2;
+  }
+
+  .header {
+    height: 100%;
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+
+  /* Haz que el header y el aside lleguen hasta el final del footer */
+  .header,
+  .sidebar {
+    grid-row-end: footer;
   }
 }
